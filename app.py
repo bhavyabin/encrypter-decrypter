@@ -17,7 +17,7 @@ def encrypt_decrypt():
         print("posted")
         state = request.form["state"]
         message = request.form["message"]
-        f = Fernet(open("secret.key","rb+").read())
+        f = Fernet(config["KEY"])
 
         if state == "encrypt":
             encoded_message = message.encode()
